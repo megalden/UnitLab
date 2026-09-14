@@ -10,7 +10,7 @@ import SwiftUI
 struct MainUnitLabView: View {
     
     @State private var selection: ConvertValue = .temperature
-    
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 15) {
@@ -18,7 +18,14 @@ struct MainUnitLabView: View {
                 
                 CustomPickerView(selection: $selection)
                 
-                CustomTextFieldView()
+                switch selection {
+                case .temperature:
+                    TemperatureView()
+                case .length:
+                    EmptyView()
+                case .weight:
+                    EmptyView()
+                }
                 
                 Spacer()
 
@@ -27,12 +34,6 @@ struct MainUnitLabView: View {
             .padding()
         }
     }
-}
-
-enum TemperatureUnit: String, CaseIterable {
-    case celsius = "°C"
-    case fahrenheit = "°F"
-    case kelvin = "°K"
 }
 
 enum ConvertValue: String, CaseIterable {

@@ -7,14 +7,36 @@
 
 import SwiftUI
 
-struct CustomTextFieldView: View {
+struct CustomTextFieldView<T:UnitSelectable>: View {
+    
+    @Binding var selection: T
+    @Binding var text: String
     
     var body: some View {
-        
+        HStack {
+            TextField("", text: $text)
+                .padding(10)
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+            
+            
+            Picker("", selection: $selection) {
+                ForEach(TemperatureUnit.allCases, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .frame(width: 150, height: 80)
+            .pickerStyle(.menu)
+            .background(Color.gray.opacity(0.05))
+            .tint(Color.primary)
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+        }
     }
 }
 
 
 #Preview {
-    CustomTextFieldView()
+    CustomTextFieldView(selection: .constant(TemperatureUnit.celsius), text: .constant("100"))
 }
