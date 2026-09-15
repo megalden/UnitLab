@@ -24,9 +24,9 @@ struct CustomTextFieldView<T:UnitSelectable>: View {
                         .tag(unit)
                 }
             }
-            .frame(width: 150, height: 80)
+            .frame(width: 130, height: 80)
             .pickerStyle(.menu)
-            .background(Color.gray.opacity(0.05))
+            .background(Color.gray.opacity(0.04))
             .tint(Color.primary)
         }
         .overlay {
@@ -35,7 +35,6 @@ struct CustomTextFieldView<T:UnitSelectable>: View {
         }
     }
 }
-
 
 #Preview {
     CustomTextFieldView(selection: .constant(TemperatureUnit.celsius), text: .constant("100"))

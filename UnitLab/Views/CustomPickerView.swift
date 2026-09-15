@@ -30,8 +30,6 @@ struct CustomPickerView: View {
     }
 }
 
-
-
 #Preview {
     CustomPickerView(selection: .constant(.temperature))
 }

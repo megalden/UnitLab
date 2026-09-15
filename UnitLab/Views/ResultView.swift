@@ -30,7 +30,6 @@ struct ResultView: View {
                 RoundedRectangle(cornerRadius: 10, style: .circular)
                 
             )
-            
         }
     }
 }

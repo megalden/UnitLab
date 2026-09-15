@@ -14,7 +14,7 @@ struct MainUnitLabView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 15) {
-                Text("Conver everda units, instantly.")
+                TitleView()
                 
                 CustomPickerView(selection: $selection)
                 
@@ -30,7 +30,6 @@ struct MainUnitLabView: View {
                 Spacer()
 
             }
-            .navigationTitle("UnitLab")
             .padding()
         }
     }
