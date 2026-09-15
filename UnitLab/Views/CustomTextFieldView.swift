@@ -18,10 +18,10 @@ struct CustomTextFieldView<T:UnitSelectable>: View {
                 .padding(10)
                 .font(.system(size: 30, weight: .bold, design: .rounded))
             
-            
             Picker("", selection: $selection) {
-                ForEach(TemperatureUnit.allCases, id: \.self) {
-                    Text($0.rawValue)
+                ForEach(Array(T.allCases), id: \.self) { unit in
+                    Text(unit.title)
+                        .tag(unit)
                 }
             }
             .frame(width: 150, height: 80)

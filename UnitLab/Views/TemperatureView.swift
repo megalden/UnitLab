@@ -45,26 +45,7 @@ struct TemperatureView: View {
                 CustomTextFieldView(selection: $selectToTemp, text: $toTempText)
             }
             
-            VStack(alignment: .leading) {
-                Text("Result")
-                
-                HStack {
-                    Text("0.0")
-                        
-                    Spacer()
-                    
-                    Text(selectToTemp.rawValue)
-                }
-                .font(.system(size: 40, weight: .bold, design: .rounded))
-                .foregroundStyle(Color.blue)
-                .padding(10)
-                .background(Color.blue.opacity(0.1))
-                .clipShape(
-                    RoundedRectangle(cornerRadius: 10, style: .circular)
-                    
-                )
-                
-            }
+            ResultView(result: toTempText, measure: selectToTemp.rawValue)
         }
     }
 }
