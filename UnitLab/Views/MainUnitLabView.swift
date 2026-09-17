@@ -22,7 +22,7 @@ struct MainUnitLabView: View {
                 case .temperature:
                     TemperatureView()
                 case .length:
-                    EmptyView()
+                    LengthView()
                 case .weight:
                     EmptyView()
                 }

@@ -12,11 +12,23 @@ protocol UnitSelectable: CaseIterable, Hashable {
 }
 
 enum TemperatureUnit: String, UnitSelectable {
-    var title: String {
-        rawValue
-    }
-    
     case celsius = "°C"
     case fahrenheit = "°F"
     case kelvin = "°K"
+    
+    var title: String {
+        rawValue
+    }
+}
+
+enum LengthUnit: String, UnitSelectable {
+    case kilometer = "km"
+    case inch = "in"
+    case meter = "m"
+    case centimeter = "cm"
+    case mile = "mi"
+    
+    var title: String {
+        rawValue
+    }
 }

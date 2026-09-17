@@ -24,7 +24,7 @@ struct ResultView: View {
             }
             .font(.system(size: 40, weight: .bold, design: .rounded))
             .foregroundStyle(Color.blue)
-            .padding(10)
+            .padding(20)
             .background(Color.blue.opacity(0.1))
             .clipShape(
                 RoundedRectangle(cornerRadius: 10, style: .circular)
