@@ -9,14 +9,11 @@ import SwiftUI
 
 struct ReverseButtonView: View {
     
-    @Binding var firstElement: String
-    @Binding var secondElement: String
+    var reverse: () -> Void
     
     var body: some View {
         Button {
-            let reverse: String = firstElement
-            firstElement = secondElement
-            secondElement = reverse
+            reverse()
             
         } label: {
             ZStack {
@@ -32,6 +29,3 @@ struct ReverseButtonView: View {
     }
 }
 
-#Preview {
-    ReverseButtonView(firstElement: .constant("20"), secondElement: .constant("40"))
-}

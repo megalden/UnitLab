@@ -16,6 +16,7 @@ struct CustomTextFieldView<T:UnitSelectable>: View {
         HStack {
             TextField("", text: $text)
                 .padding(10)
+                .keyboardType(.numbersAndPunctuation)
                 .font(.system(size: 30, weight: .bold, design: .rounded))
             
             Picker("", selection: $selection) {

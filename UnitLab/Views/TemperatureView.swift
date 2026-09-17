@@ -22,7 +22,7 @@ struct TemperatureView: View {
                 CustomTextFieldView(selection: $viewModel.fromUnit, text: $viewModel.fromText)
             }
             
-            ReverseButtonView(firstElement: $viewModel.fromText, secondElement: $viewModel.toText)
+            ReverseButtonView(reverse: viewModel.isReversed)
             
             VStack(alignment: .leading) {
                 Text("To")
