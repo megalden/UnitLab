@@ -8,28 +8,26 @@
 import SwiftUI
 
 struct LengthView: View {
-    @State private var fromLengthText: String = "0"
-    @State private var toLengthText: String = "0"
-    @State private var selectFromLength: LengthUnit = .meter
-    @State private var selectToTempLength: LengthUnit = .mile
+     
+    @State private var viewModel = LengthViewModel()
     
     var body: some View {
         VStack(spacing: 20) {
             VStack(alignment: .leading) {
                 Text("From")
                 
-                CustomTextFieldView(selection: $selectFromLength, text: $fromLengthText)
+                CustomTextFieldView(selection: $viewModel.fromUnit, text: $viewModel.fromText)
             }
             
-            //ReverseButtonView()
+            ReverseButtonView(reverse:  viewModel.isReversed)
             
             VStack(alignment: .leading) {
                 Text("To")
                 
-                CustomTextFieldView(selection: $selectToTempLength, text: $toLengthText)
+                CustomTextFieldView(selection: $viewModel.toUnit, text: $viewModel.toText)
             }
             
-            ResultView(result: toLengthText, measure: selectToTempLength.rawValue)
+            ResultView(result: viewModel.toText, measure: viewModel.toUnit.title)
         }
     }
 }

@@ -30,7 +30,7 @@ struct TemperatureView: View {
                 CustomTextFieldView(selection: $viewModel.toUnit, text: $viewModel.toText)
             }
             
-            ResultView(result: viewModel.toText, measure: viewModel.toUnit.rawValue)
+            ResultView(result: viewModel.toText, measure: viewModel.toUnit.title)
         }
     }
 }
