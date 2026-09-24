@@ -33,3 +33,13 @@ enum LengthUnit: String, UnitSelectable {
     }
 }
 
+enum WeightUnit: String, UnitSelectable {
+    case pound = "lb"
+    case kilogram = "kg"
+    case gram = "g"
+    
+    var title: String {
+        rawValue
+    }
+}
+

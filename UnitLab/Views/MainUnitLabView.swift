@@ -24,11 +24,10 @@ struct MainUnitLabView: View {
                 case .length:
                     LengthView()
                 case .weight:
-                    EmptyView()
+                    WeightView()
                 }
                 
                 Spacer()
-
             }
             .padding()
         }
